@@ -39,11 +39,11 @@ bool leftToRightDecrease2(int num) {
 }
 
 
-int find_me()
+int find_me(bool func(int))
 {
   int count = 0;
   for(int i = 256310; i < 732736 + 1; ++i) {
-    if(leftToRightDecrease2(i)) {
+    if(func(i)) {
       ++count;
     }
   }
@@ -53,5 +53,8 @@ int find_me()
 int main()
 {
   std::cout << "Day 4" << std::endl;
-  std::cout <<  find_me() << std::endl;
+  std::cout << "Part 1" << std::endl;
+  std::cout <<  find_me(leftToRightDecrease) << std::endl;
+  std::cout << "Part 2" << std::endl;
+  std::cout <<  find_me(leftToRightDecrease2) << std::endl;
 }
